@@ -5,8 +5,8 @@
 //Variáveis
 String nome = "";
 String cargo = "";
-float salarioInicial = 0;
-float salarioAcrescido = 0;
+float salarioAtual = 0;
+float novoSalario = 0;
 
 void setup()
 {
@@ -25,25 +25,41 @@ void loop()
   Serial.println();//pula uma linha
   
   //Entrada 
-  Serial.println("Digite seu nome");//pergunta o nome do usuário
+  Serial.println("Qual eh o nome do funcionario?");//pergunta o nome do usuário
   while(! Serial.available() );//espera o usuário digitar/dar um <Enter>
   nome = Serial.readString();//resposta do usuário / ler um texto da serial
   nome.trim();//retira  o \n (retira o enter capturado)
   
-  Serial.println("Digite seu cargo");//pergunta o cargo do usuário
+  Serial.println("Qual eh o cargo de " + nome);//pergunta o cargo do usuário
   while(! Serial.available() );//espera o usuário digitar/dar um <Enter>
   cargo = Serial.readString();//resposta do usuário / ler um texto da serial
   cargo.trim();//retira  o \n (retira o enter capturado)
   
-  Serial.println("Digite seu salario sem pontuacao");//pergunta o salário do usuário
+  Serial.println("Qual eh o salario de " + nome);//pergunta o salário do usuário
   while(! Serial.available() );//espera o usuário digitar/dar um <Enter>
-  salarioInicial = Serial.parseFloat();//resposta do usuário
+  salarioAtual = Serial.parseFloat();//resposta do usuário
   
   //processamento
-  salarioAcrescido = salarioInicial + (salarioInicial * 0.10);
+  novoSalario = salarioAtual + (salarioAtual * 0.10);
   
   //saída
-  Serial.println("O seu nome eh: " + String (nome) );
-  Serial.println("O seu salario acrescido eh: " + String (salarioAcrescido, 2) );
-  delay(5000);//aguarda 5 segundos antes de rodar o loop novamente
+  Serial.println("Relatorio");
+  Serial.println();
+  Serial.println("--------------------------------");
+  Serial.println();
+  Serial.println("Nome: " + nome);
+  Serial.println("Cargo: " + cargo);
+  Serial.println("Salario atual: " + String (salarioAtual) );
+  Serial.println("Novo salario: " + String (novoSalario, 2) );
+  Serial.println();
+  Serial.println("--------------------------------");
+  Serial.println();
+  
+  Serial.println("Digite uma letra + <ENTER> para continuar...");//Faz o programa parar até apertar o <ENTER>
+  while (! Serial.available () );
+  
+  Serial.println();
+  Serial.println();
+  
+  Serial.read();//Limpa o cachê do \n - o <ENTER>
 }
