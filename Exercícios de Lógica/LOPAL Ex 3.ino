@@ -1,8 +1,8 @@
 //Faça um programa que receba um número e exiba o seu dobro.
 
 //Variáveis
-long numero = 0;
-long dobroNumero = 0;
+float numero = 0;
+float dobroNumero = 0;
 
 void setup()
 {
@@ -14,7 +14,7 @@ void loop()
   //Entrada 
   Serial.println("Digite um numero qualquer");//pergunta um número da escolha do usuário
   while(! Serial.available() );//espera o usuário digitar/dar um <Enter>
-  numero = Serial.parseLong();//resposta do usuário
+  numero = Serial.parseFloat();//resposta do usuário
   
   //processamento
   dobroNumero = numero * 2;
