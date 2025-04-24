@@ -19,11 +19,11 @@ void loop()
  //Entrada 
   Serial.println("Digite seu ano de nascimento");//pergunta o ano de nascimento do usuário
   while(! Serial.available() );//espera o usuário digitar/dar um <Enter>
-  anoNascimento = Serial.parseInt();//resposta do usuário
+  anoNascimento = Serial.parseInt();//resposta do usuário/converte o texto que o usuário digitar em inteiro
   
   Serial.println("Digite o ano atual");//pergunta o ano atual do usuário
   while(! Serial.available() );//espera o usuário digitar/dar um <Enter>
-  anoAtual = Serial.parseInt();//resposta do usuário
+  anoAtual = Serial.parseInt();//resposta do usuário/converte o texto que o usuário digitar em inteiro
   
   //processamento
   idadeAtual = anoAtual - anoNascimento;
