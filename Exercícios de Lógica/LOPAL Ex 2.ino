@@ -7,7 +7,7 @@
 int anoNascimento = 0;
 int anoAtual = 0;
 int idadeAtual = 0;
-int idadeSemana = 0;
+float idadeSemana = 0;
 
 void setup()
 {
@@ -31,6 +31,6 @@ void loop()
   
   //saída
   Serial.println("Sua idade em anos: " + String (idadeAtual) );
-  Serial.println("Sua idade em semanas: " + String (idadeSemana) );
+  Serial.println("Sua idade em semanas: " + String (idadeSemana, 3) );
   delay(5000);//aguarda 5 segundos antes de rodar o loop novamente
 }
