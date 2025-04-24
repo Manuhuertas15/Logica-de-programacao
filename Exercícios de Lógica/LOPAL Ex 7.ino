@@ -26,7 +26,7 @@ void loop()
   cargo = Serial.readString();//resposta do usuário / ler um texto da serial
   cargo.trim();//retira  o \n (retira o enter capturado)
   
-  Serial.println("Digite seu salario");//pergunta o salário do usuário
+  Serial.println("Digite seu salario sem pontuacao");//pergunta o salário do usuário
   while(! Serial.available() );//espera o usuário digitar/dar um <Enter>
   salarioInicial = Serial.parseFloat();//resposta do usuário
   
