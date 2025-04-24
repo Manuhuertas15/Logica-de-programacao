@@ -13,6 +13,15 @@ void setup()
 
 void loop()
 {
+  //Cabeçalho
+  Serial.println ("|------------------------------|");
+  Serial.println ("|                              |");
+  Serial.println ("|          LOPAL Ex 5          |");
+  Serial.println ("|                              |");
+  Serial.println ("|------------------------------|");
+  Serial.println();//pula uma linha
+  Serial.println();//pula uma linha
+  
   //Entrada 
   Serial.println("Digite uma medida em centimetros");//pergunta uma medida em centímetros da escolha do usuário
   while(! Serial.available() );//espera o usuário digitar/dar um <Enter>
@@ -22,6 +31,6 @@ void loop()
  numeroPolegada = numeroCm * 2.54;
   
  //saída
- Serial.println("A conversao de centimetro para polegada eh: " + String (numeroPolegada) );
+ Serial.println("A conversao de centimetro para polegada eh: " + String (numeroPolegada, 2) );
  delay(5000);//aguarda 5 segundos antes de rodar o loop novamente
 }

@@ -15,6 +15,15 @@ void setup()
 
 void loop()
 {
+  //Cabeçalho
+  Serial.println ("|------------------------------|");
+  Serial.println ("|                              |");
+  Serial.println ("|          LOPAL Ex 7          |");
+  Serial.println ("|                              |");
+  Serial.println ("|------------------------------|");
+  Serial.println();//pula uma linha
+  Serial.println();//pula uma linha
+  
   //Entrada 
   Serial.println("Digite seu nome");//pergunta o nome do usuário
   while(! Serial.available() );//espera o usuário digitar/dar um <Enter>
@@ -35,6 +44,6 @@ void loop()
   
   //saída
   Serial.println("O seu nome eh: " + String (nome) );
-  Serial.println("O seu salario acrescido eh: " + String (salarioAcrescido) );
+  Serial.println("O seu salario acrescido eh: " + String (salarioAcrescido, 2) );
   delay(5000);//aguarda 5 segundos antes de rodar o loop novamente
 }

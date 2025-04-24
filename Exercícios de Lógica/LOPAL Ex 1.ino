@@ -15,16 +15,26 @@ void setup()
 
 void loop()
 {
+  //Cabeçalho
+  Serial.println ("|------------------------------|");
+  Serial.println ("|                              |");
+  Serial.println ("|          LOPAL Ex 1          |");
+  Serial.println ("|                              |");
+  Serial.println ("|------------------------------|");
+  Serial.println();//pula uma linha
+  Serial.println();//pula uma linha
+  
   //entrada
   Serial.println("Digite sua idade");//pergunta a idade do usuário
   while(! Serial.available() );//espera o usuário digitar/dar um <Enter>
-  idade = Serial.parseInt();//resposta do usuário
-  
+  idade = Serial.parseLong();//resposta do usuário
+ 
   //processamento
   idadeMeses = idade * 12;
   idadeDias = idade * 365;
   idadeHoras = idadeDias * 24;
   idadeMinutos = idadeHoras * 60;
+  
   //saída
   Serial.println("Sua idade em anos: " + String (idade) );
   Serial.println("Sua idade em meses: " + String (idadeMeses) );

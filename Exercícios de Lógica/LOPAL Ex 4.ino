@@ -15,10 +15,19 @@ void setup()
 
 void loop()
 {
+  //Cabeçalho
+  Serial.println ("|------------------------------|");
+  Serial.println ("|                              |");
+  Serial.println ("|          LOPAL Ex 4          |");
+  Serial.println ("|                              |");
+  Serial.println ("|------------------------------|");
+  Serial.println();//pula uma linha
+  Serial.println();//pula uma linha
+  
   //Entrada 
   Serial.println("Digite seu nome");//pergunta o nome do usuário
   while(! Serial.available() );//espera o usuário digitar/dar um <Enter>
-  nome = Serial.readString();//resposta do usuário
+  nome = Serial.readString();//resposta do usuário / ler um texto da serial
   nome.trim();//retira  o \n (retira o enter capturado)
   
   Serial.println("Digite sua altura em metros");//pergunta a altura em metros  do usuário
@@ -35,6 +44,6 @@ void loop()
     
   //saída
   Serial.println("O seu nome eh: " + String (nome) );
-  Serial.println("O seu IMC eh: " + String (IMC) );
+  Serial.println("O seu IMC eh: " + String (IMC, 2) );
   delay(5000);//aguarda 5 segundos antes de rodar o loop novamente
 }
