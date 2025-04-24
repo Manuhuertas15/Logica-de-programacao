@@ -4,10 +4,10 @@
 //b. Essa idade convertida em semana
 
 //Variáveis 
-long anoNascimento = 0;
-long anoAtual = 0;
-long idadeAtual = 0;
-long idadeSemana = 0;
+int anoNascimento = 0;
+int anoAtual = 0;
+int idadeAtual = 0;
+int idadeSemana = 0;
 
 void setup()
 {
@@ -23,7 +23,7 @@ void loop()
   
   Serial.println("Digite o ano atual");//pergunta o ano atual do usuário
   while(! Serial.available() );//espera o usuário digitar/dar um <Enter>
-  anoAtual = Serial.parseInt();//resposta do usuário
+  anoAtual = Serial.parseInt();//resposta do usuário/converte o texto que o usuário digitar em inteiro
   
   //processamento
   idadeAtual = anoAtual - anoNascimento;
