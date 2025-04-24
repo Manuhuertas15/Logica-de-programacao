@@ -3,7 +3,7 @@
 
 //variáveis
 int idade = 0;//inicia a idade
-long idadeMeses = 0;
+int idadeMeses = 0;
 long idadeDias = 0;
 long idadeHoras = 0;
 long idadeMinutos = 0;
