@@ -33,4 +33,8 @@ void loop()
   Serial.println("A media eh: " + String(media));
   Serial.println();
   delay(3000);
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 7795b42e173a32b5eb8274446c39c7bcfb1d0823
