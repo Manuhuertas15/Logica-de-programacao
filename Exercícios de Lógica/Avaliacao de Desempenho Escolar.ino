@@ -31,4 +31,6 @@ void loop()
   media = (nota1 + nota2) / 2;
   
   Serial.println("A media eh: " + String(media));
+  Serial.println();
+  delay(3000);
 }
