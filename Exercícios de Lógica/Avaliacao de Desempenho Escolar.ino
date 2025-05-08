@@ -5,13 +5,14 @@ Você foi contratado para criar um sistema que analisa a situação de um aluno 
 Regras:
 Calcule a média entre duas notas.
 Verifique se o aluno foi aprovado:
-Aprovado se média é MAIR OU IGUAL A 6 e SE A frequênciaÉ MAIOR OU IGUAL 75%.
+Aprovado se média é MAIOR OU IGUAL A 6 e SE A frequência É MAIOR OU IGUAL 75%.
 Caso contrário, exiba se foi reprovado por nota, por frequência ou por ambos.
 Se a média for exatamente 10, exiba: "Parabéns! Nota máxima!*/
 //Variáveis
 float nota1 = 0;
 float nota2 = 0;
 float media = 0;
+float frequencia = 0;
 
 void setup()
 {
@@ -28,13 +29,37 @@ void loop()
   while(!Serial.available());
   nota2 = Serial.parseFloat();
   
+  Serial.println("Digite a frequencia (sendo 1 = 100%)");
+  while(!Serial.available());
+  frequencia = Serial.parseFloat();
+  
   media = (nota1 + nota2) / 2;
   
-  Serial.println("A media eh: " + String(media));
+  if(media > 6 && frequencia > 0.75)
+  {
+  	Serial.println("APROVADO");
+  }
+  else if(media < 6 && frequencia > 0.75)
+  {
+  	Serial.println("REPROVADO por nota");
+  }
+  else if(media < 6 && frequencia > 0.75)
+  {
+  	Serial.println("REPROVADO por nota");
+  }
+  else if(media > 6 && frequencia < 0.75)
+  {
+  	Serial.println("REPROVADO por frequencia");
+  }
+  else if(media < 6 && frequencia < 0.75)
+  {
+  	Serial.println("REPROVADO por nota e frequencia"); 
+  }
+  else if(media == 10)
+  {
+  Serial.println("Parabéns! Nota máxima!");
+  }
+  
   Serial.println();
   delay(3000);
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 7795b42e173a32b5eb8274446c39c7bcfb1d0823
