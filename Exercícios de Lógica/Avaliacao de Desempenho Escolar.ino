@@ -40,7 +40,7 @@ void loop()
   {
   	Serial.println("APROVADO");
     Serial.println("A media eh: " + String(media));
-    Serial.println("A frequencia eh: " + String(frequencia + "%"));
+    Serial.println("A frequencia eh: " + String(frequencia) + "%");
   }
   else if(media < 6 && frequencia > 0.75)
   {
@@ -74,5 +74,5 @@ void loop()
   }
   
   Serial.println();
-  delay(3000);
+  delay(5000);
 }
