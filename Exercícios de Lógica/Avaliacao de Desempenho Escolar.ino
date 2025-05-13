@@ -36,15 +36,15 @@ void loop()
   media = (nota1 + nota2) / 2;
   frequencia = frequencia * 100;
   
-  if(media > 6 && frequencia > 0.75)
+  if(media == 10)
+  {
+    Serial.println("Parabens! Nota maxima!");
+    Serial.println("A media eh: " + String(media));
+    Serial.println("A frequencia eh: " + String(frequencia) + "%");
+  }
+  else if(media > 6 && frequencia > 0.75)
   {
   	Serial.println("APROVADO");
-    Serial.println("A media eh: " + String(media));
-    Serial.println("A frequencia eh: " + String(frequencia + "%"));
-  }
-  else if(media < 6 && frequencia > 0.75)
-  {
-  	Serial.println("REPROVADO por nota");
     Serial.println("A media eh: " + String(media));
     Serial.println("A frequencia eh: " + String(frequencia) + "%");
   }
@@ -58,7 +58,7 @@ void loop()
   {
   	Serial.println("REPROVADO por frequencia");
     Serial.println("A media eh: " + String(media));
-    Serial.print("A frequencia eh: " + String(frequencia) + "%");
+    Serial.println("A frequencia eh: " + String(frequencia) + "%");
   }
   else if(media < 6 && frequencia < 0.75)
   {
@@ -66,13 +66,7 @@ void loop()
     Serial.println("A media eh: " + String(media));
     Serial.println("A frequencia eh: " + String(frequencia) + "%");
   }
-  else if(media == 10)
-  {
-    Serial.println("Parabéns! Nota máxima!");
-    Serial.println("A media eh: " + String(media));
-    Serial.println("A frequencia eh: " + String(frequencia) + "%");
-  }
   
   Serial.println();
-  delay(3000);
+  delay(5000);
 }
